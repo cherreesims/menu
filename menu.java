@@ -31,7 +31,7 @@ import java.util.Random;
       menu.add(changeColorItem);
       menu.add(exitItem);
 
-      RandomHue = getRandomGreenHue();
+      initialRandomHue = getRandomGreenHue();
 
       getDateItem.addActionListener(new ActionListener() {
           @Override
@@ -53,6 +53,47 @@ import java.util.Random;
             ex.printStackTrace();
           }
         });
-            
+
+        changColorItem.addActionListener(new ActionListener() {
+          @Override
+          public void actionPerformed(ActionEvent e) {
+            String randomHue = getRandomGreenHue();
+            frame.getContentPane().setBackground(Color.decode(randomHue));
+            initialRandomHue = randomHue; 
+          }
+        });
+
+        exitItem.addActionListner(new ActionListener() {
+          @Override
+          public void actionPerformed(Action Event e) {
+            System.exit(0);
+          }
+        });
+
+        textArea = new JTextArea();
+        textArea = .setWrapStyleWord(true);
+        textArea = .setLineWrap(true);
+        textArea = .setEditable(true);
+
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        frame.add(scrollPane, BorderLayout.CENTER);
+
+        frame.setJMenuBar(menuBar);
+        frame.setVisible(true);
+}
+
+private String getRandomGreenHue() {
+  Random rand = new Random();
+  return String.format("120,60,50', greenValue);
+}
+
+public static void main(String[] args) {
+  SwingUtilities.invokeLater(new Runnable() {
+    public void run() {
+      new Menu();
+    });
+  }
+}
+            ,
 
       
