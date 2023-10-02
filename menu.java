@@ -84,7 +84,7 @@ import java.util.Random;
 
 private String getRandomGreenHue() {
   Random rand = new Random();
-  return String.format("120,60,50', greenValue);
+  return String.format("#3CB371", greenValue);
 }
 
 public static void main(String[] args) {
